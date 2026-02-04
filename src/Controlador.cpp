@@ -18,13 +18,41 @@ void Controlador::lecturaLenta(string texto)
             cout << "==========================================" << endl;
             cout << "            EL MISTERIO DE ELIZA          " << endl;
             cout << "==========================================" << endl;
-            cout << "\n" << texto << endl;
+            cout << "\n"
+                 << texto << endl;
             return;
         }
         cout << c << flush;
         this_thread::sleep_for(chrono::milliseconds(40));
     }
     cout << endl;
+}
+
+void Controlador::generarReporteFinal()
+{
+    cout << "\n==========================================" << endl;
+    cout << "       REPORTE TECNICO DE LA AVENTURA     " << endl;
+    cout << "==========================================" << endl;
+
+    // Ejecutar algoritmos de búsqueda desde el inicio
+    Resultado resBFS = motor.ejecutarBFS("inicio");
+    Resultado resDFS = motor.ejecutarDFS("inicio");
+
+    cout << "\n1. ANALISIS DE EFICIENCIA (BFS):" << endl;
+    cout << "- Nodos visitados por Eliza: " << rutaJugador.size() << endl;
+    cout << "- Camino mas corto posible: " << resBFS.ruta.size() << " nodos." << endl;
+
+    cout << "\n2. EXPLORACION DEL GRAFO (DFS):" << endl;
+    cout << "- Operaciones realizadas por el motor: " << resDFS.operaciones << endl;
+    cout << "- Total de escenas existentes: " << resDFS.ruta.size() << endl;
+
+    float porcentaje = ((float)rutaJugador.size() / (float)resDFS.ruta.size()) * 100;
+    cout << "- Porcentaje de historia descubierta: " << porcentaje << "%" << endl;
+    cout << "==========================================" << endl;
+
+    // Pausa para que el usuario pueda leer el reporte
+    cout << "\nPresiona cualquier tecla para salir...";
+    _getch();
 }
 
 void Controlador::iniciarJuego()
@@ -52,6 +80,7 @@ void Controlador::iniciarJuego()
         {
             mostrarPantalla(parrafos.back(), opciones, 0, false, false);
             cout << "\n--- FIN DE LA HISTORIA ---" << endl;
+            generarReporteFinal();
             break; //
         }
 
@@ -74,6 +103,7 @@ void Controlador::iniciarJuego()
             else if (c == TECLA_ENTER)
             {
                 nodoActual = opciones[seleccion];
+                rutaJugador.push_back(nodoActual);
                 escenaN = true;
                 eligiendo = false; // Salir del bucle de selección para ir al siguiente nodo
             }

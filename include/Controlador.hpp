@@ -16,12 +16,13 @@ class Controlador
 {
 private:
     Modelo &motor;
+    vector<string> rutaJugador;
 
     void mostrarPantalla(string texto, const vector<string> &opciones, int seleccion, bool animar, bool mostrarMenu);
     void lecturaLenta(string texto);
-    
+    void generarReporteFinal();    
 
 public:
-    Controlador(Modelo &m) : motor(m) {}
+    Controlador(Modelo &m) : motor(m) {rutaJugador.push_back("inicio");}
     void iniciarJuego();
 };
