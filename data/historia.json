@@ -2,53 +2,91 @@
   "historia": [
     {
       "id": "inicio",
-      "parrafos": ["Se dice que las creencias están para limitarnos, aunque nadie te dice que esos límites pueden salvarte la vida...",
-      "Eliza es una bella joven que reside en un pueblo del bosque, las creencias de este eran conocidas por ser extrañas por su extraña celebración cada año, el día que supuestamente su deidad salía del bosque para encontrarse con ellos",
-      "En este pueblo había una regla dorada, no cortar las flores que crecen en el límite con el bosque, se dice que estas tienen propiedades curativas aunque nadie lo ha comprobado...", 
-      "JAMÁS SE HA ROTO ESA REGLA...",
-      "Ese día Eliza caminaba pesadamente por las rutas de tierra cercanas al bosque, había alcanzado la edad suficiente para participar en el ritual a aquel misterioso ente, pero la idea seguía sin agradarle del todo.",
-      "En los límites permitidos Eliza vio a un grupo de chicos recolectar flores a prisas, los escuchó murmurar algo sobre aliviar dolor, curar enfermedades, variables de ese estilo que no habían sido comprobadas.",
-      "La joven los observó irse, el dilema moral de delatarlos o esperar a ver lo que ocurría era algo a lo que no estaba acostumbrada, aunque algo que se negaba a admitir era el impulso por tomar aquellas flores prohibidas."],
-      "opciones": ["puerta", "ventana", "tunel"]
+      "parrafos": [
+        "Se dice que las creencias están para limitarnos, aunque nadie te dice que esos límites pueden salvarte la vida...",
+        "Eliza es una bella joven que reside en un pueblo del bosque, las creencias de este eran conocidas por ser extrañas por su extraña celebración cada año, el día que supuestamente su deidad salía del bosque para encontrarse con ellos",
+        "En este pueblo había una regla dorada, no cortar las flores que crecen en el límite con el bosque, se dice que estas tienen propiedades curativas aunque nadie lo ha comprobado...",
+        "JAMÁS SE HA ROTO ESA REGLA...",
+        "Ese día Eliza caminaba pesadamente por las rutas de tierra cercanas al bosque, había alcanzado la edad suficiente para participar en el ritual a aquel misterioso ente, pero la idea seguía sin agradarle del todo.",
+        "En los límites permitidos Eliza vio a un grupo de chicos recolectar flores a prisas, los escuchó murmurar algo sobre aliviar dolor, curar enfermedades, variables de ese estilo que no habían sido comprobadas.",
+        "La joven los observó irse, el dilema moral de delatarlos o esperar a ver lo que ocurría era algo a lo que no estaba acostumbrada, aunque algo que se negaba a admitir era el impulso por tomar aquellas flores prohibidas."
+      ],
+      "opciones": [
+        "Tomar las flores",
+        "No tomarlas"
+      ]
     },
     {
-      "id": "puerta",
-      "parrafos": "Caminas por el pasillo principal. Llegas a la GUARDIA.",
-      "opciones": ["guardia", "biblioteca"]
+      "id": "Tomar las flores",
+      "parrafos": [
+        "Eliza toma las flores y las guarda en su ropa, camina discretamente de regreso a su casa para esconderlas, quería comprobar si era cierto lo que acababa de escuchar.",
+        "El sol se estaba poniendo ya, la ceremonia estaba próxima a empezar, se apresuró a prepararse antes de ir con el resto de adultos al centro del pueblo, no debía llegar tarde bajo ninguna circunstancia.",
+        "Cuando Eliza llegó la criatura ya se encontraba allí, esperándola… Todos los presentes la miraban con odio, el rencor en sus miradas era sofocante.",
+        "Ni siquiera había tenido la posibilidad de justificarse cuando la criatura le preguntó por aquellas flores, Eliza sin saber que contestar meditó si confesar o no"
+      ],
+      "opciones": [
+        "Confesar",
+        "Callar"
+      ]
     },
     {
-      "id": "ventana",
-      "parrafos": "Saltas al patio trasero. Hay una torre y un muro bajo.",
-      "opciones": ["muro", "torre"]
+      "id": "No tomarlas",
+      "parrafos": [
+        "La tarde siguió avanzando, cada vez más tonos anaranjados en el cielo, Eliza meditaba sus opciones antes del anochecer, donde el ritual a la deidad daría lugar.",
+        "Eliza caminó hasta encontrarse frente a la casa del líder de la aldea, sabía que aquellos chicos hicieron algo prohibido, la lealtad y su crianza chocaban fuertemente dentro de sí."
+      ],
+      "opciones": [
+        "Delatar a los chicos",
+        "Callar"
+      ]
     },
     {
       "id": "tunel",
       "parrafos": "Un camino húmedo y oscuro que parece llevar al sótano.",
-      "opciones": ["sotano"]
+      "opciones": [
+        "sotano"
+      ]
     },
     {
       "id": "guardia",
       "parrafos": "¡Los guardias te ven! No tienes salida.",
-      "opciones": ["final_malo"]
+      "opciones": [
+        "final_malo"
+      ]
     },
     {
-      "id": "sotano",
-      "parrafos": "Encuentras una salida secreta, pero sales con las manos vacías.",
-      "opciones": ["final_neutro"]
+      "id": "Callar",
+      "parrafos": [
+        "La criatura sabe bien lo que ocurrió",
+        "Su ira se desata contra los habitantes del pueblo, todo por romper la única regla que les había impuesto."
+      ],
+      "opciones": [
+        "final_malo"
+      ]
     },
     {
-      "id": "torre",
-      "parrafos": "En la cima encuentras el mapa de salida y un caballo.",
-      "opciones": ["final_bueno"]
+      "id": "Confesar",
+      "parrafos": "Eliza pudo continuar su vida, los años pasaron pero jamás se quitó la sensación de ser constantemente perseguida.",
+      "opciones": [
+        "final_nuetro"
+      ]
     },
     {
-      "id": "final_malo", "parrafos": "GAME OVER: Has sido capturado.", "opciones": []
+      "id": "final_malo",
+      "parrafos": "FINAL MALO: Eliza fue obligada a ver la masacre de su pueblo debido a su elección de guardar silencio sobre la verdad.",
+      "opciones": []
     },
     {
-      "id": "final_neutro", "parrafos": "FINAL NEUTRO: Escapaste, pero eres un don nadie.", "opciones": []
+      "id": "final_neutro",
+      "parrafos": [
+        "FINAL NEUTRO: Eliza pudo continuar su vida, los años pasaron pero jamás se quitó la sensación de ser constantemente perseguida."
+      ],
+      "opciones": []
     },
     {
-      "id": "final_bueno", "parrafos": "FINAL VICTORIOSO: ¡Eres libre y rico!", "opciones": []
+      "id": "final_bueno",
+      "parrafos": "FINAL BUENO: Por el resto de sus días Eliza vive una vida plena, llena de abundancia y bendiciones.",
+      "opciones": []
     }
   ]
 }
