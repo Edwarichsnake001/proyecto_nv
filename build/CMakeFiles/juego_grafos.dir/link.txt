@@ -1,0 +1,3 @@
+C:\mingw64\bin\cmake.exe -E rm -f CMakeFiles\juego_grafos.dir/objects.a
+C:\mingw64\bin\ar.exe qc CMakeFiles\juego_grafos.dir/objects.a @CMakeFiles\juego_grafos.dir\objects1.rsp
+C:\mingw64\bin\g++.exe -g -Wl,--whole-archive CMakeFiles\juego_grafos.dir/objects.a -Wl,--no-whole-archive -o juego_grafos.exe -Wl,--out-implib,libjuego_grafos.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\juego_grafos.dir\linkLibs.rsp
