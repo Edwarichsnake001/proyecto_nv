@@ -1,0 +1,18 @@
+cmake_minimum_required(VERSION 3.10)
+project(ProyectoGrafos)
+
+set(CMAKE_CXX_STANDARD 11)
+set(CMAKE_CXX_STANDARD_REQUIRED ON)
+
+# Incluimos las carpetas de cabeceras
+include_directories(include)
+include_directories(.)
+
+# Definimos los archivos fuente MANUALMENTE para evitar errores
+# Según tu log, Modelo.cpp está en la carpeta 'src'
+set(SOURCES 
+    main.cpp 
+    src/Modelo.cpp
+)
+
+add_executable(juego_grafos ${SOURCES})

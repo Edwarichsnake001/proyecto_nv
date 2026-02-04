@@ -1,0 +1,3 @@
+C:/Users/mate-/Desktop/Proyecto/build/CMakeFiles/juego_grafos.dir
+C:/Users/mate-/Desktop/Proyecto/build/CMakeFiles/edit_cache.dir
+C:/Users/mate-/Desktop/Proyecto/build/CMakeFiles/rebuild_cache.dir

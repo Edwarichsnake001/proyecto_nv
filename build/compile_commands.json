@@ -1,0 +1,14 @@
+[
+{
+  "directory": "C:/Users/mate-/Desktop/Proyecto/build",
+  "command": "C:\\mingw64\\bin\\g++.exe  @CMakeFiles/juego_grafos.dir/includes_CXX.rsp -g -std=gnu++11 -o CMakeFiles\\juego_grafos.dir\\main.cpp.obj -c C:\\Users\\mate-\\Desktop\\Proyecto\\main.cpp",
+  "file": "C:/Users/mate-/Desktop/Proyecto/main.cpp",
+  "output": "CMakeFiles/juego_grafos.dir/main.cpp.obj"
+},
+{
+  "directory": "C:/Users/mate-/Desktop/Proyecto/build",
+  "command": "C:\\mingw64\\bin\\g++.exe  @CMakeFiles/juego_grafos.dir/includes_CXX.rsp -g -std=gnu++11 -o CMakeFiles\\juego_grafos.dir\\src\\Modelo.cpp.obj -c C:\\Users\\mate-\\Desktop\\Proyecto\\src\\Modelo.cpp",
+  "file": "C:/Users/mate-/Desktop/Proyecto/src/Modelo.cpp",
+  "output": "CMakeFiles/juego_grafos.dir/src/Modelo.cpp.obj"
+}
+]

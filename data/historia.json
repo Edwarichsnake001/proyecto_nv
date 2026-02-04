@@ -1,0 +1,48 @@
+{
+  "historia": [
+    {
+      "id": "inicio",
+      "texto": "Despiertas en una celda. Tienes tres opciones: la PUERTA, la VENTANA o el TÚNEL.",
+      "opciones": ["puerta", "ventana", "tunel"]
+    },
+    {
+      "id": "puerta",
+      "texto": "Caminas por el pasillo principal. Llegas a la GUARDIA.",
+      "opciones": ["guardia", "biblioteca"]
+    },
+    {
+      "id": "ventana",
+      "texto": "Saltas al patio trasero. Hay una torre y un muro bajo.",
+      "opciones": ["muro", "torre"]
+    },
+    {
+      "id": "tunel",
+      "texto": "Un camino húmedo y oscuro que parece llevar al sótano.",
+      "opciones": ["sotano"]
+    },
+    {
+      "id": "guardia",
+      "texto": "¡Los guardias te ven! No tienes salida.",
+      "opciones": ["final_malo"]
+    },
+    {
+      "id": "sotano",
+      "texto": "Encuentras una salida secreta, pero sales con las manos vacías.",
+      "opciones": ["final_neutro"]
+    },
+    {
+      "id": "torre",
+      "texto": "En la cima encuentras el mapa de salida y un caballo.",
+      "opciones": ["final_bueno"]
+    },
+    {
+      "id": "final_malo", "texto": "GAME OVER: Has sido capturado.", "opciones": []
+    },
+    {
+      "id": "final_neutro", "texto": "FINAL NEUTRO: Escapaste, pero eres un don nadie.", "opciones": []
+    },
+    {
+      "id": "final_bueno", "texto": "FINAL VICTORIOSO: ¡Eres libre y rico!", "opciones": []
+    }
+  ]
+}
