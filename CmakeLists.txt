@@ -4,15 +4,23 @@ project(ProyectoGrafos)
 set(CMAKE_CXX_STANDARD 11)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
-# Incluimos las carpetas de cabeceras
+# 1. Rutas de cabeceras
 include_directories(include)
 include_directories(.)
 
-# Definimos los archivos fuente MANUALMENTE para evitar errores
-# Según tu log, Modelo.cpp está en la carpeta 'src'
-set(SOURCES 
-    main.cpp 
-    src/Modelo.cpp
+# 2. ESCANEO AUTOMÁTICO DE ARCHIVOS .cpp
+# Esto busca todos los .cpp en la raíz y en la carpeta src
+file(GLOB_RECURSE SOURCES 
+    "${CMAKE_CURRENT_SOURCE_DIR}/*.cpp"
+    "${CMAKE_CURRENT_SOURCE_DIR}/src/*.cpp"
 )
 
+# 3. FILTRADO DE SEGURIDAD
+# Eliminamos cualquier archivo de la carpeta 'build' que el escaneo haya podido atrapar
+list(FILTER SOURCES EXCLUDE REGEX "${CMAKE_CURRENT_SOURCE_DIR}/build/.*")
+
+# 4. Crear el ejecutable
 add_executable(juego_grafos ${SOURCES})
+
+# Opcional: Imprime en consola qué archivos encontró para que estés seguro
+message(STATUS "Archivos detectados: ${SOURCES}")

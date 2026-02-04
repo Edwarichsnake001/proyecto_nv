@@ -1,6 +1,7 @@
 #include <iostream>
 #include <iomanip> // Para que la tabla se vea bonita
 #include "include/Modelo.hpp"
+#include "include/Controlador.hpp"
 
 using namespace std;
 
@@ -23,18 +24,20 @@ void imprimirResultado(const Resultado& res) {
 }
 
 int main() {
-    // 1. Instanciar el motor de datos
-    Modelo motor;
-
-    // 2. Cargar el JSON (Asegurate de que la ruta sea correcta)
-    cout << "Cargando base de datos narrativa..." << endl;
+   Modelo motor; // Instancia del modelo
+    
     try {
-        motor.cargarDatos("data/historia.json");
-        cout << "¡Grafo cargado exitosamente!" << endl;
+        motor.cargarDatos("data/historia.json"); //
     } catch (const exception& e) {
-        cerr << "Error critico al cargar JSON: " << e.what() << endl;
+        cerr << "Error: " << e.what() << endl;
         return 1;
     }
+
+    // Aquí es donde saltaba el error:
+    Controlador juego(motor); 
+    juego.iniciarJuego();
+
+    /*
 
     // 3. Ejecutar y comparar algoritmos desde el punto inicial
     string puntoInicial = "inicio";
@@ -54,7 +57,7 @@ int main() {
     cout << left << setw(15) << "BFS" << setw(15) << resBFS.operaciones << "Encuentra finales mas cercanos." << endl;
     cout << left << setw(15) << "DFS" << setw(15) << resDFS.operaciones << "Explora rutas completas." << endl;
 
-    cout << "\nProceso de Arquitectura de Datos finalizado." << endl;
+    cout << "\nProceso de Arquitectura de Datos finalizado." << endl;*/
     
     return 0;
 }

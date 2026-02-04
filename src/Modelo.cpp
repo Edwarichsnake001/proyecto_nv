@@ -72,3 +72,24 @@ Resultado Modelo::ejecutarDFS(string inicio) {
     }
     return res;
 }
+
+vector<string> Modelo::getOpciones(string id)
+{
+    vector<string> lista;
+    if (adj.count(id)) {
+        for (const string& vecino : adj[id]) {
+            lista.push_back(vecino);
+        }
+    }
+    return lista;
+}
+
+bool Modelo::existeConexion(string actual, string destino)
+{
+    if (adj.count(actual)) {
+        for (const string& vecino : adj[actual]) {
+            if (vecino == destino) return true;
+        }
+    }
+    return false;
+}
