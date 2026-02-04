@@ -10,7 +10,14 @@ void Modelo::cargarDatos(string ruta) {
     archivo >> j;
     for (auto& item : j["historia"]) {
         string id = item["id"];
-        textos[id] = item["texto"];
+        
+        // Cambio aquí: leer el array de parrafos
+        if (item.contains("parrafos")) {
+            for (string p : item["parrafos"]) {
+                parrafos[id].push_back(p);
+            }
+        }
+        
         for (string opcion : item["opciones"]) {
             adj[id].push_back(opcion);
         }

@@ -2,47 +2,53 @@
   "historia": [
     {
       "id": "inicio",
-      "texto": "Despiertas en una celda. Tienes tres opciones: la PUERTA, la VENTANA o el TÚNEL.",
+      "parrafos": ["Se dice que las creencias están para limitarnos, aunque nadie te dice que esos límites pueden salvarte la vida...",
+      "Eliza es una bella joven que reside en un pueblo del bosque, las creencias de este eran conocidas por ser extrañas por su extraña celebración cada año, el día que supuestamente su deidad salía del bosque para encontrarse con ellos",
+      "En este pueblo había una regla dorada, no cortar las flores que crecen en el límite con el bosque, se dice que estas tienen propiedades curativas aunque nadie lo ha comprobado...", 
+      "JAMÁS SE HA ROTO ESA REGLA...",
+      "Ese día Eliza caminaba pesadamente por las rutas de tierra cercanas al bosque, había alcanzado la edad suficiente para participar en el ritual a aquel misterioso ente, pero la idea seguía sin agradarle del todo.",
+      "En los límites permitidos Eliza vio a un grupo de chicos recolectar flores a prisas, los escuchó murmurar algo sobre aliviar dolor, curar enfermedades, variables de ese estilo que no habían sido comprobadas.",
+      "La joven los observó irse, el dilema moral de delatarlos o esperar a ver lo que ocurría era algo a lo que no estaba acostumbrada, aunque algo que se negaba a admitir era el impulso por tomar aquellas flores prohibidas."],
       "opciones": ["puerta", "ventana", "tunel"]
     },
     {
       "id": "puerta",
-      "texto": "Caminas por el pasillo principal. Llegas a la GUARDIA.",
+      "parrafos": "Caminas por el pasillo principal. Llegas a la GUARDIA.",
       "opciones": ["guardia", "biblioteca"]
     },
     {
       "id": "ventana",
-      "texto": "Saltas al patio trasero. Hay una torre y un muro bajo.",
+      "parrafos": "Saltas al patio trasero. Hay una torre y un muro bajo.",
       "opciones": ["muro", "torre"]
     },
     {
       "id": "tunel",
-      "texto": "Un camino húmedo y oscuro que parece llevar al sótano.",
+      "parrafos": "Un camino húmedo y oscuro que parece llevar al sótano.",
       "opciones": ["sotano"]
     },
     {
       "id": "guardia",
-      "texto": "¡Los guardias te ven! No tienes salida.",
+      "parrafos": "¡Los guardias te ven! No tienes salida.",
       "opciones": ["final_malo"]
     },
     {
       "id": "sotano",
-      "texto": "Encuentras una salida secreta, pero sales con las manos vacías.",
+      "parrafos": "Encuentras una salida secreta, pero sales con las manos vacías.",
       "opciones": ["final_neutro"]
     },
     {
       "id": "torre",
-      "texto": "En la cima encuentras el mapa de salida y un caballo.",
+      "parrafos": "En la cima encuentras el mapa de salida y un caballo.",
       "opciones": ["final_bueno"]
     },
     {
-      "id": "final_malo", "texto": "GAME OVER: Has sido capturado.", "opciones": []
+      "id": "final_malo", "parrafos": "GAME OVER: Has sido capturado.", "opciones": []
     },
     {
-      "id": "final_neutro", "texto": "FINAL NEUTRO: Escapaste, pero eres un don nadie.", "opciones": []
+      "id": "final_neutro", "parrafos": "FINAL NEUTRO: Escapaste, pero eres un don nadie.", "opciones": []
     },
     {
-      "id": "final_bueno", "texto": "FINAL VICTORIOSO: ¡Eres libre y rico!", "opciones": []
+      "id": "final_bueno", "parrafos": "FINAL VICTORIOSO: ¡Eres libre y rico!", "opciones": []
     }
   ]
 }

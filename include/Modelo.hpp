@@ -31,5 +31,5 @@ public:
     vector<string> getOpciones(string id);
     bool existeConexion(string actual, string destino);
 
-    string getContenido(string id) { return parrafos[id]; }
+    vector<string> getContenido(string id) { return parrafos[id]; }
 };
