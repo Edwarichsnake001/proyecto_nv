@@ -21,7 +21,7 @@ class Modelo
 {
 private:
     map<string, list<string>> adj;
-    map<string, string> textos;
+    map<string, vector<string>> parrafos;
 
 public:
     void cargarDatos(string ruta);
@@ -31,5 +31,5 @@ public:
     vector<string> getOpciones(string id);
     bool existeConexion(string actual, string destino);
 
-    string getContenido(string id) { return textos[id]; }
+    string getContenido(string id) { return parrafos[id]; }
 };
