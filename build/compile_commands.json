@@ -7,6 +7,12 @@
 },
 {
   "directory": "C:/Users/mate-/Desktop/Proyecto/proyecto_nv/build",
+  "command": "C:\\mingw64\\bin\\g++.exe  @CMakeFiles/juego_grafos.dir/includes_CXX.rsp -g -std=gnu++11 -o CMakeFiles\\juego_grafos.dir\\src\\Controlador.cpp.obj -c C:\\Users\\mate-\\Desktop\\Proyecto\\proyecto_nv\\src\\Controlador.cpp",
+  "file": "C:/Users/mate-/Desktop/Proyecto/proyecto_nv/src/Controlador.cpp",
+  "output": "CMakeFiles/juego_grafos.dir/src/Controlador.cpp.obj"
+},
+{
+  "directory": "C:/Users/mate-/Desktop/Proyecto/proyecto_nv/build",
   "command": "C:\\mingw64\\bin\\g++.exe  @CMakeFiles/juego_grafos.dir/includes_CXX.rsp -g -std=gnu++11 -o CMakeFiles\\juego_grafos.dir\\src\\Modelo.cpp.obj -c C:\\Users\\mate-\\Desktop\\Proyecto\\proyecto_nv\\src\\Modelo.cpp",
   "file": "C:/Users/mate-/Desktop/Proyecto/proyecto_nv/src/Modelo.cpp",
   "output": "CMakeFiles/juego_grafos.dir/src/Modelo.cpp.obj"

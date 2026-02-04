@@ -1,6 +1,8 @@
 file(REMOVE_RECURSE
   "CMakeFiles/juego_grafos.dir/main.cpp.obj"
   "CMakeFiles/juego_grafos.dir/main.cpp.obj.d"
+  "CMakeFiles/juego_grafos.dir/src/Controlador.cpp.obj"
+  "CMakeFiles/juego_grafos.dir/src/Controlador.cpp.obj.d"
   "CMakeFiles/juego_grafos.dir/src/Modelo.cpp.obj"
   "CMakeFiles/juego_grafos.dir/src/Modelo.cpp.obj.d"
   "juego_grafos.exe"

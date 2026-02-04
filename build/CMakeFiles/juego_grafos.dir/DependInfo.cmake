@@ -9,6 +9,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "C:/Users/mate-/Desktop/Proyecto/proyecto_nv/main.cpp" "CMakeFiles/juego_grafos.dir/main.cpp.obj" "gcc" "CMakeFiles/juego_grafos.dir/main.cpp.obj.d"
+  "C:/Users/mate-/Desktop/Proyecto/proyecto_nv/src/Controlador.cpp" "CMakeFiles/juego_grafos.dir/src/Controlador.cpp.obj" "gcc" "CMakeFiles/juego_grafos.dir/src/Controlador.cpp.obj.d"
   "C:/Users/mate-/Desktop/Proyecto/proyecto_nv/src/Modelo.cpp" "CMakeFiles/juego_grafos.dir/src/Modelo.cpp.obj" "gcc" "CMakeFiles/juego_grafos.dir/src/Modelo.cpp.obj.d"
   )
 

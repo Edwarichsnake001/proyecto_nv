@@ -4,7 +4,6 @@
 #include <iostream>
 #include <thread>
 #include <chrono>
-#include "Controlador.hpp"
 
 using namespace std;
 
@@ -16,7 +15,11 @@ void Controlador::lecturaLenta(string texto)
         {
             _getch();
             system("cls");
-            cout << "====================================" << texto << endl;
+            cout << "==========================================" << endl;
+            cout << "            EL MISTERIO DE ELIZA          " << endl;
+            cout << "==========================================" << endl;
+            cout << "\n" << texto << endl;
+            return;
         }
         cout << c << flush;
         this_thread::sleep_for(chrono::milliseconds(40));
@@ -24,42 +27,55 @@ void Controlador::lecturaLenta(string texto)
     cout << endl;
 }
 
-void Controlador::iniciarJuego() {
+void Controlador::iniciarJuego()
+{
     string nodoActual = "inicio";
     bool escenaN = true;
 
-    while (true) {
-        // Obtenemos la lista de párrafos
-        vector<string> todosLosParrafos = motor.getContenido(nodoActual); 
+    while (true)
+    {
+        vector<string> parrafos = motor.getContenido(nodoActual);
         vector<string> opciones = motor.getOpciones(nodoActual);
 
-        // NUEVO: Bucle para mostrar párrafo por párrafo
-        for (int i = 0; i < (int)todosLosParrafos.size(); i++) {
-            // Mostramos el párrafo actual. mostrarMenu es false porque estamos leyendo.
-            mostrarPantalla(todosLosParrafos[i], opciones, 0, escenaN, false);
-            
-            // Esperar Enter para el siguiente párrafo
-            while (_getch() != TECLA_ENTER);
-            escenaN = true; 
+        // FASE 1: Recorrer párrafos con ENTER
+        for (int i = 0; i < (int)parrafos.size(); i++)
+        {
+            mostrarPantalla(parrafos[i], opciones, 0, escenaN, false);
+            // Esperar Enter y nada más que Enter
+            while (_getch() != TECLA_ENTER)
+                ;
+            escenaN = true;
         }
 
-        if (opciones.empty()) break;
+        // Si el nodo no tiene opciones (Final de la historia), salimos del bucle principal
+        if (opciones.empty())
+        {
+            mostrarPantalla(parrafos.back(), opciones, 0, false, false);
+            cout << "\n--- FIN DE LA HISTORIA ---" << endl;
+            break; //
+        }
 
-        // FASE DE SELECCIÓN (Solo después de leer todos los párrafos)
+        // FASE 2: Selección de opciones
         int seleccion = 0;
-        while (true) {
-            // Mostramos el ÚLTIMO párrafo junto con el menú de opciones
-            mostrarPantalla(todosLosParrafos.back(), opciones, seleccion, false, true);
-            
+        bool eligiendo = true;
+        while (eligiendo)
+        {
+            mostrarPantalla(parrafos.back(), opciones, seleccion, false, true);
             char c = _getch();
-            if (c == -32 || c == 0) {
+
+            if (c == -32 || c == 0)
+            { // Teclas especiales (Flechas)
                 c = _getch();
-                if (c == TECLA_ARRIBA) seleccion = (seleccion > 0) ? seleccion - 1 : opciones.size() - 1;
-                if (c == TECLA_ABAJO) seleccion = (seleccion < (int)opciones.size() - 1) ? seleccion + 1 : 0;
-            } else if (c == TECLA_ENTER) {
+                if (c == TECLA_ARRIBA)
+                    seleccion = (seleccion > 0) ? seleccion - 1 : opciones.size() - 1;
+                if (c == TECLA_ABAJO)
+                    seleccion = (seleccion < (int)opciones.size() - 1) ? seleccion + 1 : 0;
+            }
+            else if (c == TECLA_ENTER)
+            {
                 nodoActual = opciones[seleccion];
                 escenaN = true;
-                break;
+                eligiendo = false; // Salir del bucle de selección para ir al siguiente nodo
             }
         }
     }
@@ -75,8 +91,6 @@ void Controlador::mostrarPantalla(string texto, const vector<string> &opciones, 
 
     if (animar)
         lecturaLenta(texto);
-    else
-        cout << texto << endl;
 
     if (mostrarMenu)
     {

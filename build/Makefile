@@ -152,6 +152,30 @@ main.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\juego_grafos.dir\build.make CMakeFiles/juego_grafos.dir/main.cpp.s
 .PHONY : main.cpp.s
 
+src/Controlador.obj: src/Controlador.cpp.obj
+.PHONY : src/Controlador.obj
+
+# target to build an object file
+src/Controlador.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\juego_grafos.dir\build.make CMakeFiles/juego_grafos.dir/src/Controlador.cpp.obj
+.PHONY : src/Controlador.cpp.obj
+
+src/Controlador.i: src/Controlador.cpp.i
+.PHONY : src/Controlador.i
+
+# target to preprocess a source file
+src/Controlador.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\juego_grafos.dir\build.make CMakeFiles/juego_grafos.dir/src/Controlador.cpp.i
+.PHONY : src/Controlador.cpp.i
+
+src/Controlador.s: src/Controlador.cpp.s
+.PHONY : src/Controlador.s
+
+# target to generate assembly for a file
+src/Controlador.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\juego_grafos.dir\build.make CMakeFiles/juego_grafos.dir/src/Controlador.cpp.s
+.PHONY : src/Controlador.cpp.s
+
 src/Modelo.obj: src/Modelo.cpp.obj
 .PHONY : src/Modelo.obj
 
@@ -188,6 +212,9 @@ help:
 	@echo ... main.obj
 	@echo ... main.i
 	@echo ... main.s
+	@echo ... src/Controlador.obj
+	@echo ... src/Controlador.i
+	@echo ... src/Controlador.s
 	@echo ... src/Modelo.obj
 	@echo ... src/Modelo.i
 	@echo ... src/Modelo.s

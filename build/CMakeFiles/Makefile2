@@ -84,12 +84,12 @@ clean: CMakeFiles/juego_grafos.dir/clean
 CMakeFiles/juego_grafos.dir/all:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\juego_grafos.dir\build.make CMakeFiles/juego_grafos.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\juego_grafos.dir\build.make CMakeFiles/juego_grafos.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=C:\Users\mate-\Desktop\Proyecto\proyecto_nv\build\CMakeFiles --progress-num=1,2,3 "Built target juego_grafos"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=C:\Users\mate-\Desktop\Proyecto\proyecto_nv\build\CMakeFiles --progress-num=1,2,3,4 "Built target juego_grafos"
 .PHONY : CMakeFiles/juego_grafos.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/juego_grafos.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\mate-\Desktop\Proyecto\proyecto_nv\build\CMakeFiles 3
+	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\mate-\Desktop\Proyecto\proyecto_nv\build\CMakeFiles 4
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 CMakeFiles/juego_grafos.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\mate-\Desktop\Proyecto\proyecto_nv\build\CMakeFiles 0
 .PHONY : CMakeFiles/juego_grafos.dir/rule
@@ -101,7 +101,7 @@ juego_grafos: CMakeFiles/juego_grafos.dir/rule
 # codegen rule for target.
 CMakeFiles/juego_grafos.dir/codegen:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\juego_grafos.dir\build.make CMakeFiles/juego_grafos.dir/codegen
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=C:\Users\mate-\Desktop\Proyecto\proyecto_nv\build\CMakeFiles --progress-num=1,2,3 "Finished codegen for target juego_grafos"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=C:\Users\mate-\Desktop\Proyecto\proyecto_nv\build\CMakeFiles --progress-num=1,2,3,4 "Finished codegen for target juego_grafos"
 .PHONY : CMakeFiles/juego_grafos.dir/codegen
 
 # clean rule for target.
