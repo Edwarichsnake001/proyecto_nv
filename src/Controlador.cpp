@@ -1,6 +1,7 @@
 #include "Controlador.hpp"
 #include <conio.h>
 #include <string>
+#include <iomanip>
 #include <iostream>
 #include <thread>
 #include <chrono>
@@ -113,28 +114,46 @@ int Controlador::mostrarMenuSlots(string titulo)
 
 void Controlador::generarReporteFinal(string nodoFinal)
 {
-    cout << "\n==========================================" << endl;
-    cout << "       REPORTE TECNICO DE LA AVENTURA     " << endl;
-    cout << "==========================================" << endl;
+    system("cls");
+    cout << "==========================================================" << endl;
+    cout << "             REPORTE TECNICO DE LA AVENTURA               " << endl;
+    cout << "==========================================================" << endl;
 
-    // Ejecutar algoritmos de búsqueda desde el inicio
+    // Ejecutar algoritmos
     Resultado resBFS = motor.ejecutarBFS("inicio", nodoFinal);
     Resultado resDFS = motor.ejecutarDFS("inicio");
 
-    cout << "\n1. ANALISIS DE EFICIENCIA (BFS):" << endl;
-    cout << "- Nodos visitados por ti: " << rutaJugador.size() << endl;
-    cout << "- Camino mas corto posible a ese final: " << resBFS.ruta.size() << " nodos." << endl;
+    // --- TABLA 1: ANALISIS DE RUTA (BFS) ---
+    cout << "\n1. ANALISIS DE EFICIENCIA (Ruta Optima)" << endl;
+    cout << "+---------------------------+----------------------------+" << endl;
+    cout << "| Metrica                   | Valor                      |" << endl;
+    cout << "+---------------------------+----------------------------+" << endl;
+    cout << "| Nodos visitados por ti    | " << setw(26) << left << rutaJugador.size() << " |" << endl;
+    cout << "| Camino mas corto (BFS)    | " << setw(26) << left << resBFS.ruta.size() << " |" << endl;
+    
+    // Calcular diferencia
+    int diferencia = (int)rutaJugador.size() - (int)resBFS.ruta.size();
+    string msgDiferencia = (diferencia == 0) ? "Ruta Perfecta" : to_string(diferencia) + " nodos extra";
+    cout << "| Desvio de la optima       | " << setw(26) << left << msgDiferencia << " |" << endl;
+    cout << "+---------------------------+----------------------------+" << endl;
 
-    cout << "\n2. EXPLORACION DEL GRAFO (DFS):" << endl;
-    cout << "- Operaciones realizadas por el motor: " << resDFS.operaciones << endl;
-    cout << "- Total de escenas existentes: " << resDFS.ruta.size() << endl;
-
+    // --- TABLA 2: EXPLORACION DEL GRAFO (DFS) ---
+    cout << "\n2. EXPLORACION DEL UNIVERSO (Grafo Completo)" << endl;
+    cout << "+---------------------------+----------------------------+" << endl;
+    cout << "| Metrica                   | Valor                      |" << endl;
+    cout << "+---------------------------+----------------------------+" << endl;
+    cout << "| Escenas totales creadas   | " << setw(26) << left << resDFS.ruta.size() << " |" << endl;
+    cout << "| Operaciones del motor     | " << setw(26) << left << resDFS.operaciones << " |" << endl;
+    
     float porcentaje = ((float)rutaJugador.size() / (float)resDFS.ruta.size()) * 100;
-    cout << "- Porcentaje de historia descubierta: " << porcentaje << "%" << endl;
-    cout << "==========================================" << endl;
+    // Formatear porcentaje a 2 decimales
+    stringstream ss;
+    ss << fixed << setprecision(2) << porcentaje << "%";
+    cout << "| Contenido descubierto     | " << setw(26) << left << ss.str() << " |" << endl;
+    cout << "+---------------------------+----------------------------+" << endl;
 
-    // Pausa para que el usuario pueda leer el reporte
-    cout << "\nPresiona cualquier tecla para salir...";
+    cout << "\n==========================================================" << endl;
+    cout << "Presiona cualquier tecla para finalizar la sesion...";
     _getch();
 }
 
