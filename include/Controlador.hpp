@@ -22,6 +22,10 @@ private:
     void lecturaLenta(string texto);
     void generarReporteFinal();    
 
+    int gestionarSeleccion(string titulo, vector<string> opciones);
+    int mostrarMenuPrincipal();      
+    int mostrarMenuSlots(string modo); 
+
 public:
     Controlador(Modelo &m) : motor(m) {rutaJugador.push_back("inicio");}
     void iniciarJuego();

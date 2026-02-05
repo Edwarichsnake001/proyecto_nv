@@ -25,6 +25,10 @@ private:
 
 public:
     void cargarDatos(string ruta);
+    void guardarProgreso(int slot, string nodoActual, const vector<string> &historial);
+    bool cargarProgreso(int slot, string &nodoActual, vector<string> &historial);
+    bool existeSlot(int slot); // Para saber si mostrar "Vacío" en el menú
+
     Resultado ejecutarBFS(string inicio);
     Resultado ejecutarDFS(string inicio);
     // En la sección public de la clase Modelo:

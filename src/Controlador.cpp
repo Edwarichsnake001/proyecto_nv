@@ -28,6 +28,62 @@ void Controlador::lecturaLenta(string texto)
     cout << endl;
 }
 
+int Controlador::gestionarSeleccion(string titulo, vector<string> opciones)
+{
+    int seleccion = 0;
+    while (true)
+    {
+        system("cls");
+        cout << "==========================================" << endl;
+        cout << "          " << titulo << endl;
+        cout << "==========================================" << endl;
+        cout << "\n";
+
+        for (int i = 0; i < (int)opciones.size(); i++)
+        {
+            if (i == seleccion)
+                cout << "  > [ " << opciones[i] << " ] <" << endl;
+            else
+                cout << "      " << opciones[i] << endl;
+        }
+
+        char c = _getch();
+        if (c == -32 || c == 0)
+        { // Flechas
+            c = _getch();
+            if (c == TECLA_ARRIBA)
+                seleccion = (seleccion > 0) ? seleccion - 1 : opciones.size() - 1;
+            if (c == TECLA_ABAJO)
+                seleccion = (seleccion < (int)opciones.size() - 1) ? seleccion + 1 : 0;
+        }
+        else if (c == TECLA_ENTER)
+        {
+            return seleccion;
+        }
+    }
+}
+
+int Controlador::mostrarMenuPrincipal()
+{
+    system("cls");
+    vector<string> opciones = {"Nueva Partida", "Cargar Partida", "Salir"};
+    return gestionarSeleccion("EL MISTERIO DE ELIZA", opciones);
+}
+
+int Controlador::mostrarMenuSlots(string modo)
+{
+    vector<string> opciones;
+    for (int i = 1; i <= 5; i++)
+    {
+        string estado = motor.existeSlot(i) ? "[PARTIDA GUARDADA]" : "[VACIO]";
+        opciones.push_back("Slot " + to_string(i) + " " + estado);
+    }
+    opciones.push_back("Regresar");
+
+    int sel = gestionarSeleccion(modo, opciones);
+    return (sel == 5) ? -1 : sel + 1; // Retorna 1-5, o -1 para regresar
+}
+
 void Controlador::generarReporteFinal()
 {
     cout << "\n==========================================" << endl;
@@ -57,7 +113,25 @@ void Controlador::generarReporteFinal()
 
 void Controlador::iniciarJuego()
 {
+    int opcionPrincipal = mostrarMenuPrincipal();
     string nodoActual = "inicio";
+
+    if (opcionPrincipal == 3)
+        return; // Salir
+
+    if (opcionPrincipal == 2)
+    {
+        int slot = mostrarMenuSlots("CARGAR PARTIDA");
+        if (slot > 0 && slot <= 5)
+        {
+            if (!motor.cargarProgreso(slot, nodoActual, rutaJugador))
+            {
+                cout << "Error al cargar. Iniciando desde cero...";
+                this_thread::sleep_for(chrono::seconds(2));
+            }
+        }
+    }
+
     bool escenaN = true;
 
     while (true)
@@ -79,9 +153,9 @@ void Controlador::iniciarJuego()
         if (opciones.empty())
         {
             mostrarPantalla(parrafos.back(), opciones, 0, false, false);
-            cout << "\n--- FIN DE LA HISTORIA ---" << endl;
+            cout << "\n===== FIN DE LA HISTORIA ====" << endl;
             generarReporteFinal();
-            break; //
+            break;
         }
 
         // FASE 2: Selección de opciones

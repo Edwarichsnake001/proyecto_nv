@@ -42,14 +42,16 @@
     },
     {
       "id": "tunel",
-      "parrafos": "Un camino húmedo y oscuro que parece llevar al sótano.",
+      "parrafos": [
+        "Un camino húmedo y oscuro que parece llevar al sótano."
+      ],
       "opciones": [
         "sotano"
       ]
     },
     {
       "id": "guardia",
-      "parrafos": "¡Los guardias te ven! No tienes salida.",
+      "parrafos": ["¡Los guardias te ven! No tienes salida."],
       "opciones": [
         "final_malo"
       ]
@@ -66,14 +68,18 @@
     },
     {
       "id": "Confesar",
-      "parrafos": "Eliza pudo continuar su vida, los años pasaron pero jamás se quitó la sensación de ser constantemente perseguida.",
+      "parrafos": [
+        "Eliza pudo continuar su vida, los años pasaron pero jamás se quitó la sensación de ser constantemente perseguida."
+      ],
       "opciones": [
-        "final_nuetro"
+        "final_neutro"
       ]
     },
     {
       "id": "final_malo",
-      "parrafos": "FINAL MALO: Eliza fue obligada a ver la masacre de su pueblo debido a su elección de guardar silencio sobre la verdad.",
+      "parrafos": [
+        "FINAL MALO: Eliza fue obligada a ver la masacre de su pueblo debido a su elección de guardar silencio sobre la verdad."
+      ],
       "opciones": []
     },
     {
@@ -85,7 +91,9 @@
     },
     {
       "id": "final_bueno",
-      "parrafos": "FINAL BUENO: Por el resto de sus días Eliza vive una vida plena, llena de abundancia y bendiciones.",
+      "parrafos": [
+        "FINAL BUENO: Por el resto de sus días Eliza vive una vida plena, llena de abundancia y bendiciones."
+      ],
       "opciones": []
     }
   ]
