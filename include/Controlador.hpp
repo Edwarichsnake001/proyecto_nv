@@ -20,13 +20,17 @@ private:
 
     void mostrarPantalla(string texto, const vector<string> &opciones, int seleccion, bool animar, bool mostrarMenu);
     void lecturaLenta(string texto);
-    void generarReporteFinal();    
+    void generarReporteFinal();
 
     int gestionarSeleccion(string titulo, vector<string> opciones);
-    int mostrarMenuPrincipal();      
-    int mostrarMenuSlots(string modo); 
+    int mostrarMenuPrincipal();
+    int mostrarMenuSlots(string titulo);
 
 public:
-    Controlador(Modelo &m) : motor(m) {rutaJugador.push_back("inicio");}
+    Controlador(Modelo &m) : motor(m)
+    {
+        rutaJugador.clear();
+        rutaJugador.push_back("inicio");
+    }
     void iniciarJuego();
 };

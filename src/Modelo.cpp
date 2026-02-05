@@ -34,36 +34,37 @@ void Modelo::guardarProgreso(int slot, string nodoActual, const vector<string> &
     guardado["nodo_actual"] = nodoActual;
     guardado["ruta_jugador"] = historial;
 
-    // Generamos el nombre: partida_1.json, partida_2.json...
-    string nombreArchivo = "partida_" + to_string(slot) + ".json";
+    // Forzamos la ruta dentro de data/ para que sea visible donde la buscas
+    string nombreArchivo = "data/partida_" + to_string(slot) + ".json";
     ofstream archivo(nombreArchivo);
+
     if (archivo.is_open())
     {
-        archivo << std::setw(4) << guardado << endl;
+        // dump(4) genera el texto JSON con sangría
+        archivo << guardado.dump(4) << endl;
         archivo.close();
     }
 }
 
 bool Modelo::cargarProgreso(int slot, string &nodoActual, vector<string> &historial)
 {
-    string nombreArchivo = "partida_" + to_string(slot) + ".json";
+    // CAMBIO: Agregar "data/" para que coincida con guardarProgreso
+    string nombreArchivo = "data/partida_" + to_string(slot) + ".json";
     ifstream archivoLectura(nombreArchivo);
 
-    // Si el archivo de guardado NO existe, lo creamos automáticamente
     if (!archivoLectura.is_open())
     {
         json nuevoGuardado;
         nuevoGuardado["nodo_actual"] = "inicio";
         nuevoGuardado["ruta_jugador"] = json::array({"inicio"});
 
+        // CAMBIO: Asegurar que la escritura también sea en "data/"
         ofstream archivoEscritura(nombreArchivo);
         if (archivoEscritura.is_open())
         {
             archivoEscritura << std::setw(4) << nuevoGuardado << endl;
             archivoEscritura.close();
         }
-
-        // Devolvemos los valores iniciales para que el juego continúe
         nodoActual = "inicio";
         historial = {"inicio"};
         return true;
@@ -93,9 +94,8 @@ bool Modelo::cargarProgreso(int slot, string &nodoActual, vector<string> &histor
 
 bool Modelo::existeSlot(int slot)
 {
-    string nombre = "partida_" + to_string(slot) + ".json";
+    string nombre = "data/partida_" + to_string(slot) + ".json";
     ifstream archivo(nombre);
-    // Solo existe si el archivo abre y tiene contenido real (no solo basura o vacío)
     return archivo.is_open() && archivo.peek() != ifstream::traits_type::eof();
 }
 

@@ -70,18 +70,45 @@ int Controlador::mostrarMenuPrincipal()
     return gestionarSeleccion("EL MISTERIO DE ELIZA", opciones);
 }
 
-int Controlador::mostrarMenuSlots(string modo)
+int Controlador::mostrarMenuSlots(string titulo)
 {
-    vector<string> opciones;
+    vector<string> slots;
     for (int i = 1; i <= 5; i++)
     {
-        string estado = motor.existeSlot(i) ? "[PARTIDA GUARDADA]" : "[VACIO]";
-        opciones.push_back("Slot " + to_string(i) + " " + estado);
+        string estado = motor.existeSlot(i) ? "[OCUPADO]" : "[VACIO]";
+        slots.push_back("Slot " + to_string(i) + " " + estado);
     }
-    opciones.push_back("Regresar");
+    slots.push_back("REGRESAR");
 
-    int sel = gestionarSeleccion(modo, opciones);
-    return (sel == 5) ? -1 : sel + 1; // Retorna 1-5, o -1 para regresar
+    int seleccion = 0;
+    while (true)
+    {
+        system("cls");
+        cout << "=== " << titulo << " ===\n\n";
+        for (int i = 0; i < (int)slots.size(); i++)
+        {
+            if (i == seleccion)
+                cout << "  > " << slots[i] << " <\n";
+            else
+                cout << "    " << slots[i] << "\n";
+        }
+
+        char c = _getch();
+        if (c == -32 || c == 0)
+        {
+            c = _getch();
+            if (c == 72)
+                seleccion = (seleccion > 0) ? seleccion - 1 : slots.size() - 1;
+            if (c == 80)
+                seleccion = (seleccion < (int)slots.size() - 1) ? seleccion + 1 : 0;
+        }
+        else if (c == 13)
+        {
+            if (seleccion == 5)
+                return -1;        // Regresar
+            return seleccion + 1; // Retorna el número de slot 1-5
+        }
+    }
 }
 
 void Controlador::generarReporteFinal()
@@ -161,25 +188,46 @@ void Controlador::iniciarJuego()
         // FASE 2: Selección de opciones
         int seleccion = 0;
         bool eligiendo = true;
+
+        // 1. CREAR una copia de las opciones y agregar el botón de guardado
+        vector<string> opcionesMenu = opciones;
+        opcionesMenu.push_back("GUARDAR PARTIDA");
+
         while (eligiendo)
         {
-            mostrarPantalla(parrafos.back(), opciones, seleccion, false, true);
+            // 2. CAMBIAR: Usar 'opcionesMenu' para que el usuario vea la opción
+            mostrarPantalla(parrafos.back(), opcionesMenu, seleccion, false, true);
             char c = _getch();
 
             if (c == -32 || c == 0)
-            { // Teclas especiales (Flechas)
+            {
                 c = _getch();
                 if (c == TECLA_ARRIBA)
-                    seleccion = (seleccion > 0) ? seleccion - 1 : opciones.size() - 1;
+                    seleccion = (seleccion > 0) ? seleccion - 1 : opcionesMenu.size() - 1;
                 if (c == TECLA_ABAJO)
-                    seleccion = (seleccion < (int)opciones.size() - 1) ? seleccion + 1 : 0;
+                    seleccion = (seleccion < (int)opcionesMenu.size() - 1) ? seleccion + 1 : 0;
             }
             else if (c == TECLA_ENTER)
             {
-                nodoActual = opciones[seleccion];
-                rutaJugador.push_back(nodoActual);
-                escenaN = true;
-                eligiendo = false; // Salir del bucle de selección para ir al siguiente nodo
+                // 3. LOGICA: Si eligió el último índice, es "Guardar Partida"
+                if (seleccion == (int)opcionesMenu.size() - 1)
+                {
+                    int slot = mostrarMenuSlots("SELECCIONA SLOT");
+                    if (slot != -1)
+                    {
+                        motor.guardarProgreso(slot, nodoActual, rutaJugador);
+                        cout << "\n>> Partida Guardada <<";
+                        this_thread::sleep_for(chrono::seconds(1));
+                    }
+                }
+                else
+                {
+                    // Opción normal de la historia
+                    nodoActual = opciones[seleccion];
+                    rutaJugador.push_back(nodoActual);
+                    escenaN = true;
+                    eligiendo = false;
+                }
             }
         }
     }
