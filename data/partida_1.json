@@ -1,6 +1,7 @@
 {
-    "nodo_actual": "inicio",
+    "nodo_actual": "Tomar las flores",
     "ruta_jugador": [
-        "inicio"
+        "inicio",
+        "Tomar las flores"
     ]
 }

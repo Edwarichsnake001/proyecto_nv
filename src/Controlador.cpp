@@ -97,16 +97,16 @@ int Controlador::mostrarMenuSlots(string titulo)
         if (c == -32 || c == 0)
         {
             c = _getch();
-            if (c == 72)
+            if (c == TECLA_ARRIBA) // Cambiado 72 por la constante
                 seleccion = (seleccion > 0) ? seleccion - 1 : slots.size() - 1;
-            if (c == 80)
+            if (c == TECLA_ABAJO) // Cambiado 80 por la constante
                 seleccion = (seleccion < (int)slots.size() - 1) ? seleccion + 1 : 0;
         }
-        else if (c == 13)
+        else if (c == TECLA_ENTER) // Cambiado 13 por la constante
         {
             if (seleccion == 5)
-                return -1;        // Regresar
-            return seleccion + 1; // Retorna el número de slot 1-5
+                return -1;
+            return seleccion + 1;
         }
     }
 }
@@ -142,24 +142,32 @@ void Controlador::iniciarJuego()
 {
     int opcionPrincipal = mostrarMenuPrincipal();
     string nodoActual = "inicio";
-
-    if (opcionPrincipal == 3)
-        return; // Salir
+    bool escenaN = true;
 
     if (opcionPrincipal == 2)
+        return; // Salir
+
+    if (opcionPrincipal == 1)
     {
         int slot = mostrarMenuSlots("CARGAR PARTIDA");
         if (slot > 0 && slot <= 5)
         {
-            if (!motor.cargarProgreso(slot, nodoActual, rutaJugador))
+            if (motor.cargarProgreso(slot, nodoActual, rutaJugador))
+            {
+                // DESACTIVAMOS la lectura lenta para el primer nodo cargado
+                escenaN = false;
+            }
+            else
             {
                 cout << "Error al cargar. Iniciando desde cero...";
                 this_thread::sleep_for(chrono::seconds(2));
             }
         }
+        else
+        {
+            return;
+        }
     }
-
-    bool escenaN = true;
 
     while (true)
     {
@@ -216,6 +224,12 @@ void Controlador::iniciarJuego()
                     if (slot != -1)
                     {
                         motor.guardarProgreso(slot, nodoActual, rutaJugador);
+                        vector<string> opcionesPost = {"Continuar Jugando", "Salir al Menu Principal"};
+                        int despues = gestionarSeleccion("PARTIDA GUARDADA EN SLOT " + to_string(slot), opcionesPost);
+                        if (despues == 1) // El índice 1 es "Salir al Menu Principal"
+                        {
+                            return;
+                        }
                         cout << "\n>> Partida Guardada <<";
                         this_thread::sleep_for(chrono::seconds(1));
                     }
