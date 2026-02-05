@@ -20,7 +20,7 @@ private:
 
     void mostrarPantalla(string texto, const vector<string> &opciones, int seleccion, bool animar, bool mostrarMenu);
     void lecturaLenta(string texto);
-    void generarReporteFinal();
+    void generarReporteFinal(string nodoFinal);
 
     int gestionarSeleccion(string titulo, vector<string> opciones);
     int mostrarMenuPrincipal();

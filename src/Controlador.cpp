@@ -111,19 +111,19 @@ int Controlador::mostrarMenuSlots(string titulo)
     }
 }
 
-void Controlador::generarReporteFinal()
+void Controlador::generarReporteFinal(string nodoFinal)
 {
     cout << "\n==========================================" << endl;
     cout << "       REPORTE TECNICO DE LA AVENTURA     " << endl;
     cout << "==========================================" << endl;
 
     // Ejecutar algoritmos de búsqueda desde el inicio
-    Resultado resBFS = motor.ejecutarBFS("inicio");
+    Resultado resBFS = motor.ejecutarBFS("inicio", nodoFinal);
     Resultado resDFS = motor.ejecutarDFS("inicio");
 
     cout << "\n1. ANALISIS DE EFICIENCIA (BFS):" << endl;
-    cout << "- Nodos visitados por Eliza: " << rutaJugador.size() << endl;
-    cout << "- Camino mas corto posible: " << resBFS.ruta.size() << " nodos." << endl;
+    cout << "- Nodos visitados por ti: " << rutaJugador.size() << endl;
+    cout << "- Camino mas corto posible a ese final: " << resBFS.ruta.size() << " nodos." << endl;
 
     cout << "\n2. EXPLORACION DEL GRAFO (DFS):" << endl;
     cout << "- Operaciones realizadas por el motor: " << resDFS.operaciones << endl;
@@ -189,7 +189,7 @@ void Controlador::iniciarJuego()
         {
             mostrarPantalla(parrafos.back(), opciones, 0, false, false);
             cout << "\n===== FIN DE LA HISTORIA ====" << endl;
-            generarReporteFinal();
+            generarReporteFinal(nodoActual);
             break;
         }
 

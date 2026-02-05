@@ -100,23 +100,36 @@ bool Modelo::existeSlot(int slot)
 }
 
 // ALGORITMO BFS (Búsqueda en Anchura)
-Resultado Modelo::ejecutarBFS(string inicio)
+Resultado Modelo::ejecutarBFS(string inicio, string destino)
 {
     Resultado res;
     res.tipo = "BFS";
     res.operaciones = 0;
+
+
     queue<string> q;
+    map<string,string> padres; //reconstruir el camino del jugador
     set<string> visitado;
 
     q.push(inicio);
     visitado.insert(inicio);
+    padres[inicio] =""; 
 
     while (!q.empty())
     {
         string actual = q.front();
         q.pop();
-        res.ruta.push_back(actual);
         res.operaciones++;
+
+        if(actual == destino){
+            string temp = actual;
+            while (temp != "")
+            {
+                res.ruta.insert(res.ruta.begin(),temp);
+                temp = padres[temp];
+            }
+            
+        }
 
         for (string vecino : adj[actual])
         {
@@ -124,6 +137,7 @@ Resultado Modelo::ejecutarBFS(string inicio)
             if (visitado.find(vecino) == visitado.end())
             {
                 visitado.insert(vecino);
+                padres[vecino] = actual;
                 q.push(vecino);
             }
         }
