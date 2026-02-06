@@ -8,8 +8,30 @@
         "En este pueblo había una regla dorada, no cortar las flores que crecen en el límite con el bosque, se dice que estas tienen propiedades curativas aunque nadie lo ha comprobado...",
         "JAMÁS SE HA ROTO ESA REGLA...",
         "Ese día Eliza caminaba pesadamente por las rutas de tierra cercanas al bosque, había alcanzado la edad suficiente para participar en el ritual a aquel misterioso ente, pero la idea seguía sin agradarle del todo.",
+        "Mientras divagaba notó el camino de tierra hacia el bosque, aquel que les permitía salir de aquel lugar, salvo que nadie se iba, dentro del bosque tenían todo lo que podían desear mientras la deidad los protege."
+      ],
+      "opciones": [
+        "Irse",
+        "Quedarse"
+      ]
+    },
+    {
+      "id": "Irse",
+      "parrafos": [
+        "Eliza deseaba ver con sus propios ojos que había más allá del bosque. Una vida que desde siempre le era esquiva.",
+        "Hoy esa posibilidad se convirtió en realidad. Caminó hasta que sus piernas no dieron más. El horizonte era cálido, pero la penumbra se cirnió sobre ella",
+        "Una voz comenzó a llamar. A veces cercana, otras como un susurro en su oído...",
+        "Quizá acaba de pagar un precio desconocido..."
+      ],
+      "opciones": [
+        "final_neutro"
+      ]
+    },
+    {
+      "id": "Quedarse",
+      "parrafos": [
         "En los límites permitidos Eliza vio a un grupo de chicos recolectar flores a prisas, los escuchó murmurar algo sobre aliviar dolor, curar enfermedades, variables de ese estilo que no habían sido comprobadas.",
-        "La joven los observó irse, el dilema moral de delatarlos o esperar a ver lo que ocurría era algo a lo que no estaba acostumbrada, aunque algo que se negaba a admitir era el impulso por tomar aquellas flores prohibidas."
+        "La joven los observó irse, el dilema moral de delatarlos o esperar a ver lo que ocurría era algo a lo que no estaba acostumbrada, aunque algo que se negaba a admitir era el impulso por tomar aquellas flores prohibidas"
       ],
       "opciones": [
         "Tomar las flores",
@@ -19,14 +41,141 @@
     {
       "id": "Tomar las flores",
       "parrafos": [
-        "Eliza toma las flores y las guarda en su ropa, camina discretamente de regreso a su casa para esconderlas, quería comprobar si era cierto lo que acababa de escuchar.",
-        "El sol se estaba poniendo ya, la ceremonia estaba próxima a empezar, se apresuró a prepararse antes de ir con el resto de adultos al centro del pueblo, no debía llegar tarde bajo ninguna circunstancia.",
-        "Cuando Eliza llegó la criatura ya se encontraba allí, esperándola… Todos los presentes la miraban con odio, el rencor en sus miradas era sofocante.",
-        "Ni siquiera había tenido la posibilidad de justificarse cuando la criatura le preguntó por aquellas flores, Eliza sin saber que contestar meditó si confesar o no"
+        "Eliza tomó las flores y las guardó en su ropa. Caminó discretamente de regreso a su casa para esconderlas, quería comprobar si era cierto lo que acababa de escuchar.",
+        "No tenía muchos lugares donde podría esconderlas, pero su curiosidad le dio un par de caminos posibles"
+      ],
+      "opciones": [
+        "Armario",
+        "Alacena"
+      ]
+    },
+    {
+      "id": "Armario",
+      "parrafos": [
+        "Una vez acomodó las flores en su cuarto. El sol comenzó a caer, la ceremonia estaba próxima a empezar, se apresuró a prepararse antes de ir con el resto de adultos al centro del pueblo, no debía llegar tarde bajo ninguna circunstancia.",
+        "Cuando Eliza llegó, la gente del pueblo le regresó miradas de desprecio. Con un rencor sofocante.",
+        "El líder se acercó hacia Eliza. Su sonrisa intentaba ser cálida, pero la hostilidad era más grande que ninguna.",
+        "Dime, Eliza, ¿Tienes algo que confesarnos?"
       ],
       "opciones": [
         "Confesar",
         "Callar"
+      ]
+    },
+    {
+      "id": "Alacena",
+      "parrafos": [
+        "No existía lugar mejor. El sol comenzó a caer, la ceremonia estaba próxima a empezar, se apresuró a prepararse antes de ir con el resto de adultos al centro del pueblo, no debía llegar tarde bajo ninguna circunstancia.",
+        "Cuando Eliza llegó, la gente del pueblo le regresó miradas de desprecio. Con un rencor sofocante.",
+        "El líder se acercó hacia Eliza. Su sonrisa intentaba ser cálida, pero la hostilidad era más grande que ninguna.",
+        "<<Dime, Eliza, ¿Tienes algo que confesarnos?>>"
+      ],
+      "opciones": [
+        "Confesar",
+        "Ir a casa",
+        "Callar"
+      ]
+    },
+    {
+      "id": "Confesar",
+      "parrafos": [
+        "Algo en su interior le hizo darse del grave error que cometió. Su cuerpo no paraba de tiritar con cada palabra que decía",
+        "<<Querida Eliza. Has reconocido tu error y eso es lo importante. Lo mejor que puedes hacer es ir a casa y no topar nunca las flores otra vez>>",
+        "<<Estoy seguro que así obtendrás perdón. Pero no sé cuanto tiempo tardará...>>"
+      ],
+      "opciones": [
+        "final_neutro"
+      ]
+    },
+    {
+      "id": "Callar",
+      "parrafos": [
+        "Eliza no pronunció palabra alguna. Las miradas de rencor empezaban a quemarla por dentro y su respiración comenzó a entrecortarse",
+        "Su cabeza comenzó a dar vueltas, sus piernas dejaron de responder y una voz se hizo presente",
+        "<<¡¡TÚÚÚÚÚÚ...!!>>",
+        "<<¡¡Has cometido el único pecado que jamás se perdonará!!>>",
+        "<<Tu castigo debe ser peor que la muerte...>>",
+        "¡¡VIVE CON TU ELECCIÓN!!",
+        "Su cuerpo dejó de responderle. Sus ojos no podían evitar mirar a la extraña criatura que apareció en medio del pueblo, una que su sola presencia erizó a todos",
+        "No podía hablar, no podía expresar ninguna emoción, pero una imagen se quedaría en su mente...",
+        "Un río rojizo que aumentaba hacia ella..."
+      ],
+      "opciones": [
+        "final_malo"
+      ]
+    },
+    {
+      "id": "Ir a casa",
+      "parrafos": [
+        "Ella respondió en que no se encontraba bien y si podía regresar a casa. Las personas querían empezar a rodearlas pero el líder las detuvo.",
+        "<<Adelante, ve a casa. No nos culpes si algo malo te sucede>>",
+        "Con escalofríos regresó a su hogar. Un gran suspiro salió de su cuerpo, donde las lágrimas no paraban de salir. Su mente divagaba en lo que era correcto hacer..."
+      ],
+      "opciones": [
+        "Escapar",
+        "Dormir"
+      ]
+    },
+    {
+      "id": "Dormir",
+      "parrafos": [
+        "Su cuerpo se sentía cada vez más pesado. Eliza deseaba que, para mañana, todo el mundo pudiera calmarse un poco y decidir que hacer",
+        "Sin embargo, una voz hizo presencia",
+        "<<¡¡TÚÚÚÚÚÚ...!!>>",
+        "<<¡¡Has cometido el único pecado que jamás se perdonará!!>>",
+        "<<Tu castigo debe ser peor que la muerte...>>",
+        "¡¡VIVE CON TU ELECCIÓN!!",
+        "Su cuerpo dejó de responderle. Sus ojos no podían evitar mirar a la extraña criatura que apareció en medio de todo el ritual, una que su sola presencia erizó a todos",
+        "No podía hablar, no podía expresar ninguna emoción, pero una imagen se quedaría en su mente...",
+        "Un río rojizo que aumentaba hacia ella..."
+      ],
+      "opciones": [
+        "final_malo"
+      ]
+    },
+    {
+      "id": "Escapar",
+      "parrafos": [
+        "El pecado que cometió era irreversible. Si quería tener una oportunidad de salvarse, había una única opción... Huir de su pueblo",
+        "Agarró las flores y, con todas sus fuerzas, comenzó a correr hacia el bosque.",
+        "La única salida que conocía...",
+        "Al fin pudo divisar la frontera del bosque. Solo debía tomar el camino correcto en una encrucijada",
+        "Varios pasos se escuchaban detrás suya. Su cabeza también giró a la izquierda tras un par de ruidos que salían..."
+      ],
+      "opciones": [
+        "Derecha",
+        "Izquierda"
+      ]
+    },
+    {
+      "id": "Derecha",
+      "parrafos": [
+        "Con rapidez tomó el camino de la derecha. Los ruidos empezaron a desaparecer y las flores comenzaron a brillar cada vez que llegaban al límite",
+        "Sin importar las ramas",
+        "sin importar los tropiezos y su propio cansancio...",
+        " Al fin podría liberarse.",
+        "Su vista se cegó por un momento...",
+        "Al abrir sus ojos, se encontraba en un gran prado lleno de otras flores. La sensación de paz era lo que inundaba cada rincón, y el camino de piedras la invitaba a seguir caminando"
+      ],
+      "opciones": [
+        "final_bueno"
+      ]
+    },
+    {
+      "id": "Izquierda",
+      "parrafos": [
+        "La curiosidad recorrió cada centímetro de su cuerpo. Con paso lento tomó el camino izquierdo para ver lo que causaba esos ruidos",
+        "Su cabeza comenzó a dar vueltas, sus piernas dejaron de responder y una voz se hizo presente",
+        "<<¡¡TÚÚÚÚÚÚ...!!>>",
+        "<<¡¡Has cometido el único pecado que jamás se perdonará!!>>",
+        "<<Tu castigo debe ser peor que la muerte...>>",
+        "¡¡VIVE CON TU ELECCIÓN!!",
+        "Su cuerpo dejó de responderle. Sus ojos no podían evitar mirar a la extraña criatura que apareció en medio del pueblo, una que su sola presencia erizó a todos",
+        "No podía hablar, no podía expresar ninguna emoción, pero una imagen se quedaría en su mente...",
+        "Un río rojizo que aumentaba hacia ella..."
+      ],
+      "opciones": [
+        "final_malo"
       ]
     },
     {
@@ -37,48 +186,35 @@
       ],
       "opciones": [
         "Delatar a los chicos",
-        "Callar"
+        "Mantener silencio"
       ]
     },
     {
-      "id": "tunel",
+      "id": "Delatar a los chicos",
       "parrafos": [
-        "Un camino húmedo y oscuro que parece llevar al sótano."
+        "Eliza entró a la casa del líder, su crianza ganó sobre su lealtad a sus compañeros, con paso decidido esperó a que aquel hombre llegara y habló.",
+        "Contó lo que escuchó, sobre los beneficios que podía traer, dio nombres, direcciones y especificaciones de cada uno de ellos; el líder sonrió y le pidió no asistir esa noche al culto.",
+        "A la mañana siguiente Eliza despierta con una nota de agradecimiento por parte del pueblo, gracias a su sinceridad el pueblo sería bendecido con comida y protección."
       ],
       "opciones": [
-        "sotano"
+        "final_bueno"
       ]
     },
     {
-      "id": "guardia",
-      "parrafos": ["¡Los guardias te ven! No tienes salida."],
-      "opciones": [
-        "final_malo"
-      ]
-    },
-    {
-      "id": "Callar",
+      "id": "Mantener silencio",
       "parrafos": [
-        "La criatura sabe bien lo que ocurrió",
-        "Su ira se desata contra los habitantes del pueblo, todo por romper la única regla que les había impuesto."
+        "El problema nunca fue suyo. Eliza regresó a su casa para prepararse, pidiendo para que aquellos jóvenes recapaciten del error. ",
+        "El momento del ritual llegó, donde una criatura se alzó en medio de todos. Sin mediar palabra, su ira se desató en todos los presentes...",
+        "Excepto Eliza"
       ],
       "opciones": [
         "final_malo"
       ]
     },
     {
-      "id": "Confesar",
+      "id": "final_bueno",
       "parrafos": [
-        "Eliza pudo continuar su vida, los años pasaron pero jamás se quitó la sensación de ser constantemente perseguida."
-      ],
-      "opciones": [
-        "final_neutro"
-      ]
-    },
-    {
-      "id": "final_malo",
-      "parrafos": [
-        "FINAL MALO: Eliza fue obligada a ver la masacre de su pueblo debido a su elección de guardar silencio sobre la verdad."
+        "FINAL BUENO: Por el resto de sus días Eliza vive una vida plena, llena de abundancia y bendiciones."
       ],
       "opciones": []
     },
@@ -90,9 +226,9 @@
       "opciones": []
     },
     {
-      "id": "final_bueno",
+      "id": "final_malo",
       "parrafos": [
-        "FINAL BUENO: Por el resto de sus días Eliza vive una vida plena, llena de abundancia y bendiciones."
+        "FINAL MALO: Eliza fue obligada a ver la masacre de su pueblo debido a su elección de guardar silencio sobre la verdad."
       ],
       "opciones": []
     }
